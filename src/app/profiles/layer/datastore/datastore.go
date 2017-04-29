@@ -5,8 +5,8 @@ import (
 
 	"cloud.google.com/go/datastore"
 
-	v "../../domain/concept/validations"
-	e "../../domain/entity"
+	v "app/profiles/domain/concept/validations"
+	e "app/profiles/domain/entity"
 )
 
 const (
