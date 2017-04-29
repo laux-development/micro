@@ -1,7 +1,6 @@
 package micro
 
 import (
-	"fmt"
 	"html/template"
 	"net/http"
 )
@@ -9,16 +8,23 @@ import (
 // templates
 // parse and cache templates
 var templates = template.Must(template.ParseFiles(
-	"templates/components/login-element.tmpl",
-	"templates/components/login-cdn-library.tmpl",
-	"templates/components/login-script.tmpl",
-	"templates/pages/login.tmpl",
+	"templates/components/login/login-element.tmpl",
+	"templates/components/login/login-cdn-library.tmpl",
+	"templates/components/login/login-script.tmpl",
+	"templates/components/login/login-return-script.tmpl",
+	"pages/login.tmpl",
+	"pages/home.tmpl",
 ))
 
 func init() {
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/", home)
+	http.HandleFunc("/login", login)
 }
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello, world!")
+func home(w http.ResponseWriter, r *http.Request) {
+	templates.ExecuteTemplate(w, "home", nil)
+}
+
+func login(w http.ResponseWriter, r *http.Request) {
+	templates.ExecuteTemplate(w, "login", nil)
 }

@@ -1,28 +1,11 @@
 {{define "login-script"}}
     <script type="text/javascript">
       var lock = new Auth0Lock('L5pcKk1Nswc5aDK6pr5KJ5uEB8WUa6v8', 'laux.auth0.com', {
-        container: 'login-inline',
         auth: {
-          redirectUrl: 'https://YOUR_APP/callback',
-          responseType: 'code',
-          params: {
-            scope: 'openid' // Learn about scopes: https://auth0.com/docs/scopes
-          }
+          redirectUrl: 'http://localhost:8080/'
         }
       });
       
       lock.show();
-
-      lock.on("authenticated", function(authResult) {
-        lock.getProfile(authResult.idToken, function(error, profile) {
-          if (error) {
-          // Handle error
-          return;
-        }
-        localStorage.setItem('id_token', authResult.idToken);
-        // Display user information
-        show_profile_info(profile);
-      });
-      });
     </script>
 {{end}}
