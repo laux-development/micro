@@ -1,6 +1,6 @@
 package validations
 
 // ValidationProvider provides validation behaviour
-type ValidationProvider interface {
+type Provider interface {
 	Validate() error
 }
