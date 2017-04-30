@@ -1,7 +1,8 @@
-# Google App Engine generated folder #
+## Google App Engine generated folder 
+
 appengine-generated/
 
-# Mac OSX #
+## Mac OSX 
 
 *.DS_Store
 .AppleDouble
@@ -30,7 +31,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Windows #
+## Windows 
 
 # Windows thumbnail cache files
 Thumbs.db
@@ -51,3 +52,35 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+## Editors
+
+.vscode
+
+## Golang
+
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+_test
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.exe
+*.test
+*.prof
